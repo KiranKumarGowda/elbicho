@@ -10,9 +10,19 @@ jobs:
       - name: demo
         run: echo "Hello Gowda"
   demo:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get the code
         uses: actions/checkout@v3
       - name: first
         run: echo "Hello"
+
+  demo1:
+    needs: demo
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        uses: actions/checkout@v3
+      - name: kir
+        run: echo "hello elbicho"
