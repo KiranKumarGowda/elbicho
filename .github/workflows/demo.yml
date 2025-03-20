@@ -15,4 +15,4 @@ jobs:
       - name: Get the code
         uses: actions/checkout@v3
       - name: first
-        run: echo "Hello"
+        run: echo "Do u want to know the name , and the name is ${{secrets.SECRET}} , ${{secrets.DOLO}}"
