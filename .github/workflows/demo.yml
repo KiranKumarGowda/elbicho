@@ -13,9 +13,10 @@ jobs:
       - name: demo
         run: echo "Hello Gowda"
   demo:
+    environment: NEW
     runs-on: ubuntu-latest
     steps:
       - name: Get the code
         uses: actions/checkout@v3
-      - name: first
-        run: echo "Do u want to know the name , and the name is ${{secrets.SECRET}} , ${{secrets.DOLO}}"
+      - name: second
+        run: echo "The name of the person is ${{secrets.SORT}} , ${{secrets.VALUE}}"
