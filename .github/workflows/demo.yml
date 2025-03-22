@@ -24,4 +24,4 @@ jobs:
         if: success()
         run: echo "The name is scuuess"
       - name: fourth
-        uses: .\.github\workflows\resuse.yml
+        uses: ./.github/workflows/resuse.yml
