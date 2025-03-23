@@ -4,8 +4,13 @@ on:
   push:
     branches:
       - master
-
-
+  
+  workflow_dispatch:
+    inputs:
+      demoinput:
+        description: this is the input for the workflow
+        required: true
+        default: "Kiran"
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -23,6 +28,8 @@ jobs:
       - name: third
         if: success()
         run: echo "The name is scuuess"
+      - name: fifth
+        run: echo "the name of the person is ${{inputs.demoinput}}"
     
   elicho:
     name: resuing wokrlow
