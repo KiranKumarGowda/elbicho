@@ -11,12 +11,16 @@ on:
         description: this is the input for the workflow
         required: true
         default: "Kiran"
+    
 jobs:
   test:
     runs-on: ubuntu-latest
+    outputs:
+      greeting: ${{ steps.set-output-step.outputs.result }}
     steps:
-      - name: demo
-        run: echo "Hello Gowda"
+      - name: Set Output
+        id: set-output-step
+        run: echo "result=Hello, GitHub Actions!" >> $GITHUB_OUTPUT
   demo:
     environment: NEW
     runs-on: ubuntu-latest
